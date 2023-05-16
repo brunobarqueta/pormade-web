@@ -1,12 +1,14 @@
 import nova_iorque from "../../assets/nova-iorque.png";
+import vector from "../../assets/vector.png";
 import ProgressBar from "../ProgressBar";
 
 const CardsStore = () => {
 
 	return (
-		<div className="bg-gray-50 rounded-lg p-2 w-64">
+		<div className="bg-gray-50 rounded-lg p-3 w-64">
 			<div className="relative">
-				<img src={nova_iorque} alt="nova_iorque" className="w-full rounded-lg" />
+				<img src={vector} className="rounded-lg absolute bottom-0" alt="vector" />
+				<img src={nova_iorque} alt="nova_iorque"/>
 				<div className="absolute bottom-0 left-0 right-0 pl-6 pb-8">
 					<h2 className="text-white text-md font-bold break-words w-32">Viagem para Nova Iorque</h2>
 				</div>
