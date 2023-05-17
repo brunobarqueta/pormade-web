@@ -1,6 +1,6 @@
 import Points from "../Points";
 
-const PointsStores: React.FC = () => {
+const PointsPrizes: React.FC = () => {
 
     return (
         <div className="flex-grow flex flex-col items-center justify-center">
@@ -13,4 +13,4 @@ const PointsStores: React.FC = () => {
     )
 }
 
-export default PointsStores;
+export default PointsPrizes;
