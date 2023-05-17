@@ -21,6 +21,9 @@ const NavBar: React.FC = () => {
                 <div className="flex-1 flex justify-end items-center mr-8 mb-16 tracking-wider">
                     <ul className={`flex text-xs uppercase font-normal ${pathname === "/" ? 'text-white' : 'text-gray-400'}`}>
                         <li className="mr-6">
+                            <Link to="/login">Ver Login</Link>
+                        </li>
+                        <li className="mr-6">
                             <Link to="/">Início</Link>
                         </li>
                         <li className="mr-6">
