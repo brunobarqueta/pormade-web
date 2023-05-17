@@ -1,11 +1,11 @@
 import NavBar from "../components/NavBar";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import milao_big from "../assets/milao-big.png";
 import vector_big from "../assets/vector-big.png";
 import ProgressBar from "../components/ProgressBar";
 
 const Prize = () => {
-	const { id } = useParams();
+	// const { id } = useParams();
 
 	return (
 		<>
