@@ -10,16 +10,23 @@ const Prize = () => {
 	return (
 		<>
 			<NavBar />
-			<div className="absolute top-0 mt-36 flex flex-col md:flex-row px-14 pb-14">
-				<div className="relative rounded-3xl">
-					<img src={vector_big} className="absolute bottom-0 object-scale-down rounded-3xl" alt="vector" />
+			<div className="flex justify-center h-screen">
+				<div>
+					<img src={vector_big} className="absolute bottom-0 object-contain rounded-3xl" alt="vector" />
 					<img src={milao_big} className="rounded-3xl" alt="nova_iorque" />
+					<div className="relative bottom-4 w-full flex justify-center">
+						<div className="flex items-center">
+							<span className="h-2 w-2 bg-white rounded-full mx-2"></span>
+							<span className="h-2 w-2 bg-green-300 rounded-full mx-2"></span>
+							<span className="h-2 w-2 bg-green-300 rounded-full mx-2"></span>
+						</div>
+					</div>
 				</div>
 				<div className="px-16 py-8">
 					<h1 className="text-4xl text-green-600 break-words w-72 font-bold mb-3">Viagem para Nova Iorque</h1>
 					<p className="text-sm text-gray-600 mb-6">Prazo: 20/12</p>
 					<div className="mb-2">
-						<ProgressBar progress={30} height={"h-6"}/>
+						<ProgressBar progress={30} height={"h-6"} />
 					</div>
 					<p className="text-xs text-gray-400 break-words mb-6">Necessários 300.000 pontos</p>
 					<p className="text-sm w-80 mb-6">
