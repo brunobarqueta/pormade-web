@@ -14,11 +14,11 @@ const NavBar: React.FC = () => {
     return (
         <div>
             {pathname === "/" ? <PointsHome /> : null}
-            <nav className={`h-48 flex justify-between px-12 font-inter ${pathname === "/" ? 'bg-green-600' : 'bg-white'}`}>
+            <nav className={`h-48 flex justify-between px-12 ${pathname === "/" ? 'bg-green-600' : 'bg-white'}`}>
                 <div className="flex">
                     <img src={pathname === "/" ? logo_white : logo} alt="Logo" className="w-44 object-contain mb-16" />
                 </div>
-                <div className="flex-1 flex justify-end items-center mr-8 mb-16 tracking-wider">
+                <div className="flex-1 flex justify-end items-center mr-8 mb-16 tracking-wider font-inter">
                     <ul className={`flex text-xs uppercase font-normal ${pathname === "/" ? 'text-white' : 'text-gray-400'}`}>
                         <li className="mr-6">
                             <Link to="/login">Ver Login</Link>
@@ -33,7 +33,7 @@ const NavBar: React.FC = () => {
                             <Link to="/stores">Lojas</Link>
                         </li>
                         <li className="mr-6">
-                            <Link to="/extract">Extratos</Link>
+                            <Link to="/extracts">Extratos</Link>
                         </li>
                         <li className="mr-6">
                             <Link to="/financial-extract">Extratos Financeiros</Link>

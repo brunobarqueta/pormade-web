@@ -16,7 +16,7 @@ const CardsPrize = ({ title, picture, percentage, points, width }: Props) => {
 				<img src={vector} className="rounded-lg absolute bottom-0 object-scale-down" alt="vector" />
 				<img src={picture} alt="nova_iorque" />
 				<div className="absolute bottom-0 left-0 right-0 pl-6 pb-8">
-					<h2 className="text-white text-md font-semibold break-words w-32 font-inter">{title}</h2>
+					<h2 className="text-white text-md font-semibold break-words w-32">{title}</h2>
 				</div>
 			</div>
 			<div className="relative mt-4">

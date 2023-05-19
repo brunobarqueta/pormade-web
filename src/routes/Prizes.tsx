@@ -12,7 +12,7 @@ const Prizes = () => {
 		<div>
 			<NavBar />
 			<PointsPrizes />
-			<div className="flex items-center justify-center mt-48 mb-20">
+			<div className="flex items-center justify-center mt-48 mb-20 font-inter">
 				<div className="grid grid-cols-3 gap-12">
 					<Link to={`/prizes/${1}`}>
 						<CardsPrize title={"Viagem para Nova Iorque"} picture={nova_iorque} percentage={50} points={300000} />
@@ -34,7 +34,6 @@ const Prizes = () => {
 					</Link>
 				</div>
 			</div>
-			points={50000}
 		</div>
 	);
 };

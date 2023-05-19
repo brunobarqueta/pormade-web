@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Prizes from './routes/Prizes.tsx'
 import Login from './routes/Login.tsx'
 import Prize from './routes/Prize.tsx'
+import Extracts from './routes/Extracts.tsx'
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: '/prizes/:id',
     element: <Prize />
+  },
+  {
+    path: '/extracts',
+    element: <Extracts />
   },
   // {
   //   path: '/stores',

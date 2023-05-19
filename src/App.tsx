@@ -12,7 +12,7 @@ export default function Home() {
 	return (
 		<>
 			<NavBar />
-			<div className="flex items-center justify-center mt-32 mb-12">
+			<div className="flex items-center justify-center mt-32 mb-12 font-inter">
 				<div className="grid grid-cols-3">
 					<CardsHome icon={trophy} title={"Prêmios"} />
 					<CardsHome icon={stores} title={"Lojas"} />
