@@ -7,7 +7,7 @@ import profile_img from '../assets/profile-img.png';
 import bell from '../assets/bell.png';
 import gray_bell from '../assets/gray-bell.png';
 
-const NavBar: React.FC = () => {
+const NavBar = () => {
     const location = useLocation();
     const { pathname } = location;
 
@@ -35,9 +35,9 @@ const NavBar: React.FC = () => {
                         <li className="mr-6">
                             <Link to="/extracts">Extratos</Link>
                         </li>
-                        <li className="mr-6">
+                        {/* <li className="mr-6">
                             <Link to="/financial-extract">Extratos Financeiros</Link>
-                        </li>
+                        </li> */}
                         <li className="mr-6">
                             <Link to="/doubts">Dúvidas</Link>
                         </li>

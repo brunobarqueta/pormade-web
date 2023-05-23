@@ -6,35 +6,34 @@ import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import CardsPrize from "../components/Prizes/CardsPrize";
 import PointsPrizes from "../components/Prizes/PointsPrizes";
+import { useContext } from "react";
+import { UserContext } from "../contexts/userContext";
+import { PrizesContext } from "../contexts/prizesContext";
 
 const Prizes = () => {
+	const {user} = useContext(UserContext);
+	const {prizes} = useContext(PrizesContext);
+
+	const calculatePorcentage = (points: number) => {
+		const porcentage = (user.points / points) * 100; // Calcula a porcentagem
+		return parseFloat(porcentage.toFixed(0));
+	};
 	return (
-		<div>
+		<>
 			<NavBar />
-			<PointsPrizes />
+			<PointsPrizes points={user.points} />
 			<div className="flex items-center justify-center mt-48 mb-20 font-inter">
 				<div className="grid grid-cols-3 gap-12">
-					<Link to={`/prizes/${1}`}>
-						<CardsPrize title={"Viagem para Nova Iorque"} picture={nova_iorque} percentage={50} points={300000} />
-					</Link>
-					<Link to={`/prizes/${2}`}>
-						<CardsPrize title={"Viagem para Milão"} picture={milao} percentage={35} points={480000} />
-					</Link>
-					<Link to={`/prizes/${3}`}>
-						<CardsPrize title={"Viagem para Milão"} picture={milao2} percentage={12} points={520000} />
-					</Link>
-					<Link to={`/prizes/${4}`}>
-						<CardsPrize title={"Viagem para Nova Iorque"} picture={nova_iorque} percentage={82} points={120000} />
-					</Link>
-					<Link to={`/prizes/${5}`}>
-						<CardsPrize title={"Viagem para Milão"} picture={milao} percentage={23} points={96000} />
-					</Link>
-					<Link to={`/prizes/${6}`}>
-						<CardsPrize title={"Viagem para Milão"} picture={milao2} percentage={2} points={340000} />
-					</Link>
+					{prizes.map((el) => {
+						return (
+							<Link to={`/prize/${el.id}`} key={el.id}>
+								<CardsPrize title={el.title} picture={el.picture} percentage={calculatePorcentage(el.points)} points={el.points} />
+							</Link>
+						);
+					})}
 				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 

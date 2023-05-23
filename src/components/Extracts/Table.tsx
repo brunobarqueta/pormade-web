@@ -1,12 +1,9 @@
-import { FiDownload } from "react-icons/fi";
-
 interface TableData {
 	id: number;
-	number: string;
+	attendant: string;
 	date: string;
 	registration: string;
 	value: number;
-	paymentMethod: string;
 	status: string;
 }
 
@@ -35,11 +32,10 @@ const Table: React.FC<Props> = ({ data }) => {
 			<table className="min-w-full font-inter text-sm">
 				<thead>
 					<tr>
-						<th className="px-4 text-gray-400 font-normal text-left">Número</th>
+						<th className="px-4 text-gray-400 font-normal text-left">Cliente</th>
 						<th className="px-4 text-gray-400 font-normal text-left">Data</th>
-						<th className="px-4 text-gray-400 font-normal text-left">Cadastro</th>
+						<th className="px-4 text-gray-400 font-normal text-left">Atendente</th>
 						<th className="px-4 text-gray-400 font-normal text-left">Valor</th>
-						<th className="px-4 text-gray-400 font-normal text-left">Forma de Pagamento</th>
 						<th className="px-4 text-gray-400 font-normal text-left">Status</th>
 						<th className="px-4 text-gray-400 font-normal text-left"></th>
 					</tr>
@@ -47,15 +43,11 @@ const Table: React.FC<Props> = ({ data }) => {
 				<tbody className="bg-white divide-y divide-gray-200 space-y-4">
 					{data.map((item) => (
 						<tr key={item.id}>
-							<td className="py-7 px-4 text-gray-700">{item.number}</td>
-							<td className="py-7 px-4 text-gray-700">{item.date}</td>
 							<td className="py-7 px-4 text-gray-700">{item.registration}</td>
+							<td className="py-7 px-4 text-gray-700">{item.date}</td>
+							<td className="py-7 px-4 text-gray-700">{item.attendant}</td>
 							<td className="py-7 px-4 text-gray-700">R$ {item.value.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
-							<td className="py-7 px-4 text-gray-700">{item.paymentMethod}</td>
 							<td className="py-7 px-4 text-gray-700 flex items-center ml-4">{renderStatusIndicator(item.status)}</td>
-							<td className="py-7 px-4">
-                            <FiDownload className=" text-gray-700" size={18} />
-							</td>
 						</tr>
 					))}
 				</tbody>
