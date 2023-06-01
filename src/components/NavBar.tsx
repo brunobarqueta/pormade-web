@@ -7,6 +7,7 @@ import logo from "../assets/logo.png";
 import profile_img from "../assets/profile-img.png";
 import bell from "../assets/bell.png";
 import gray_bell from "../assets/gray-bell.png";
+
 import { useState } from "react";
 
 const NavBar = () => {
@@ -58,14 +59,14 @@ const NavBar = () => {
 						</li>
 					</ul>
 					<div>
-						<img src={profile_img} alt="Foto de Perfil" className="h-16 w-16 rounded-full mx-4" onClick={handleProfileClick}/>
+						<img src={profile_img} alt="Foto de Perfil" className="h-16 w-16 rounded-full mx-4 cursor-pointer" onClick={handleProfileClick}/>
 					</div>
 					<div>
 						<img src={pathname === "/" ? bell : gray_bell} alt="Sino" className="w-6 h-6 ml-4 object-scale-down" />
 					</div>
 				</div>
 			</nav>
-			<ProfileModal isOpen={isModalOpen} onClose={closeModal} user={{ name: "aaa", subtitle: "bbb", avatar: "aaa" }} />
+			<ProfileModal isOpen={isModalOpen} onClose={closeModal} user={{ name: "aaa", subtitle: "bbb", avatar: profile_img }} />
 		</div>
 	);
 };
