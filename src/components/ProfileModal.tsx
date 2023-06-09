@@ -23,7 +23,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, user }) => {
         { title: "Dados pessoais", subtitle: "Veja e edite dados cadastrais", icon: personal_data, w: 28 },
         { title: "Endereço", subtitle: "Confira e/ou edite seu endereço", icon: profile_map, w: 28 },
         { title: "Alterar senha", subtitle: "Altere sua senha desde aqui", icon: profile_lock, w: 28 },
-        { title: "Dúvidas Frequentes", subtitle: "Tire suas dúvidas sobre a Pormade", icon: profile_question, w: 28 }
+        { title: "Dúvidas Frequentes", subtitle: "Tire suas dúvidas sobre a Pormade", icon: profile_question, w: 28 },
+        { title: "Dados da Conta", subtitle: "Veja e edite dados cadastrais", icon: profile_lock, w: 28 }
     ];
 
     return (
@@ -48,7 +49,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, user }) => {
                     leaveTo="opacity-0 translate-x-full -translate-y-full"
                 >
                     <div className="flex items-center justify-center h-screen">
-                        <div className="w-96 h-1/2 bg-green-600 mt-16 rounded-xl flex items-center">
+                        <div className="w-96 h-2/3 bg-green-600 mt-16 rounded-xl flex items-center z-20">
                             <div className="flex flex-col">
                                 <div className="absolute ml-24 -mt-32">
                                     <div className="h-48 w-48 bg-white rounded-full overflow-hidden mx-auto">
@@ -57,7 +58,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, user }) => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="mt-12">
+                                <div className="mt-16">
                                     {modalOptions.map((item, index) => (
                                         <div className="flex items-center my-10" key={index}>
                                             <div className="ml-16 mr-4">

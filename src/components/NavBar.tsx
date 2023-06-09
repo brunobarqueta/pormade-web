@@ -54,8 +54,8 @@ const NavBar = () => {
 						<li className="mr-6">
 							<Link to="/doubts">Dúvidas</Link>
 						</li>
-						<li className="mr-6">
-							<Link to="/account">Conta</Link>
+						<li className="mr-6 cursor-pointer" onClick={handleProfileClick}>
+							Perfil
 						</li>
 					</ul>
 					<div>
@@ -63,6 +63,7 @@ const NavBar = () => {
 					</div>
 					<div>
 						<img src={pathname === "/" ? bell : gray_bell} alt="Sino" className="w-6 h-6 ml-4 object-scale-down" />
+						<div className={`absolute rounded-full w-3 h-3 -mt-7 ml-7 ${pathname === "/" ? "bg-green-400" : "bg-green-700"}`}></div>
 					</div>
 				</div>
 			</nav>
