@@ -9,6 +9,7 @@ import Prize from "./routes/Prize.tsx";
 import Extracts from "./routes/Extracts.tsx";
 import UserProvider from "./contexts/userContext.tsx";
 import PrizesProvider from "./contexts/prizesContext.tsx";
+import Stores from "./routes/Stores.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -31,10 +32,10 @@ const router = createBrowserRouter([
 		path: "/extracts",
 		element: <Extracts />,
 	},
-	// {
-	//   path: '/stores',
-	//   element: <Stores />
-	// },
+	{
+	  path: '/stores',
+	  element: <Stores />
+	},
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

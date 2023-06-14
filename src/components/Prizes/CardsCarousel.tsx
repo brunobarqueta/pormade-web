@@ -4,6 +4,7 @@ import vector from "../../assets/vector.png";
 import ProgressBar from "../ProgressBar";
 import { UserContext } from "../../contexts/userContext";
 import { useContext } from "react"
+import { useNavigate } from "react-router-dom";
 
 interface CardsCarouselProps {
     prizes: Prize[];
@@ -12,7 +13,7 @@ interface CardsCarouselProps {
     isFirst: boolean;
 }
 const CardsCarousel = ({ prizes, isNextTransition, currentImageIndex, isFirst }: CardsCarouselProps) => {
-
+    const navigate = useNavigate(); 
     const { user } = useContext(UserContext);
 
     const calculatePorcentage = (points: number) => {
@@ -21,6 +22,10 @@ const CardsCarousel = ({ prizes, isNextTransition, currentImageIndex, isFirst }:
     };
 
     const index = isFirst ? currentImageIndex : (currentImageIndex + 1) % prizes.length
+
+    const handleRedirect = (prizeId: number) => {
+        navigate(`/prize/${prizeId}`); // Redirecionar para a rota desejada
+    };
 
     return (
         <Transition
@@ -34,7 +39,7 @@ const CardsCarousel = ({ prizes, isNextTransition, currentImageIndex, isFirst }:
             leaveFrom="translate-x-0"
             leaveTo={isNextTransition ? 'translate-x-full' : '-translate-x-full'}
         >
-            <div className="relative mb-2">
+            <div className="relative mb-2 cursor-pointer" onClick={() => handleRedirect(prizes[index].id)}>
                 <img src={vector} className="rounded-lg absolute bottom-0 object-scale-down w-40" alt="vector" />
                 <img src={prizes[index].picture} className="rounded-lg w-40 h-36" alt="Carousel Image" />
                 <div className="absolute bottom-0 left-0 right-0 pl-4 pb-3">
