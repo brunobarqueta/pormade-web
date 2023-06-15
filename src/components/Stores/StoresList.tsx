@@ -1,0 +1,40 @@
+import { AiFillStar } from "react-icons/ai";
+
+import leaf_pormade from "../../assets/leaf-pormade.png";
+import pig from "../../assets/pig.png";
+import tag from "../../assets/tag.png";
+
+interface StoresListProps {
+    title: string;
+    score: number;
+}
+
+const StoresList = ({title, score}: StoresListProps) => {
+	return (
+		<div className="flex items-center justify-between w-full pt-4 pl-4 pb-4">
+			<img src={leaf_pormade} alt="Leaf Pormade"/>
+			<div>
+				<h3 className="text-lg font-bold text-gray-900">{title}</h3>
+				<div className="flex items-center">
+					<AiFillStar className="w-4 h-4 text-yellow-400" />
+					<AiFillStar className="w-4 h-4 text-yellow-400" />
+					<AiFillStar className="w-4 h-4 text-yellow-400" />
+					<AiFillStar className="w-4 h-4 text-yellow-400" />
+					<AiFillStar className="w-4 h-4 text-gray-300" />
+					<span className="text-gray-500 text-sm ml-2">{score}</span>
+				</div>
+			</div>
+			<div className="flex items-center text-xs">
+				<span className="text-green-400 mx-2 font-bold">Online</span>
+				<span className="text-gray-500">-</span>
+				<span className="text-gray-500 mx-2">Disponível 24h</span>
+			</div>
+			<div className="flex items-center">
+				<img src={pig} alt="Pig" className="mr-2"/>
+				<img src={tag} alt="Tag"/>
+			</div>
+		</div>
+	);
+};
+
+export default StoresList;

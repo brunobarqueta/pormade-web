@@ -1,10 +1,7 @@
-import React, { useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { PrizesContext } from '../../contexts/prizesContext';
 import CardsCarousel from './CardsCarousel';
 import { IoIosArrowRoundForward, IoIosArrowRoundBack} from "react-icons/io";
-
-
-
 
 const Carousel = ({ current }: { current: number }) => {
   const { prizes } = useContext(PrizesContext);
@@ -31,14 +28,14 @@ const Carousel = ({ current }: { current: number }) => {
       </div>
 
       <button
-        className="absolute top-1/2 -left-8 transform -translate-y-1/2 bg-green-700 text-white p-2 rounded-full"
+        className="absolute top-1/2 -left-8 transform -translate-y-1/2 bg-green-600 text-white p-2 rounded-full"
         onClick={goToPreviousImage}
       >
         <IoIosArrowRoundBack size={24} className="text-white" />
       </button>
 
       <button
-        className="absolute top-1/2 -right-16 transform -translate-y-1/2 bg-green-700 text-white p-2 rounded-full"
+        className="absolute top-1/2 -right-16 transform -translate-y-1/2 bg-green-600 text-white p-2 rounded-full"
         onClick={goToNextImage}
       >
         <IoIosArrowRoundForward size={24} className="text-white" />

@@ -1,7 +1,3 @@
-import nova_iorque from "../assets/nova-iorque.png";
-import milao from "../assets/milao.png";
-import milao2 from "../assets/milao2.png";
-
 import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import CardsPrize from "../components/Prizes/CardsPrize";
