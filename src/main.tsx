@@ -10,6 +10,7 @@ import Extracts from "./routes/Extracts.tsx";
 import UserProvider from "./contexts/userContext.tsx";
 import PrizesProvider from "./contexts/prizesContext.tsx";
 import Stores from "./routes/Stores.tsx";
+import Faq from "./routes/Faq.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -22,19 +23,23 @@ const router = createBrowserRouter([
 	},
 	{
 		path: "/prizes",
-		element: <Prizes />
+		element: <Prizes />,
 	},
 	{
 		path: "/prize/:id",
-		element: <Prize />
+		element: <Prize />,
+	},
+	{
+		path: "/stores",
+		element: <Stores />,
 	},
 	{
 		path: "/extracts",
 		element: <Extracts />,
 	},
 	{
-	  path: '/stores',
-	  element: <Stores />
+		path: "/faq",
+		element: <Faq />,
 	},
 ]);
 

@@ -19,7 +19,7 @@ const Extracts = () => {
         <NavBar />
         <div className="flex-grow flex flex-col items-center justify-center mb-5">
             <div className="flex absolute top-32 font-inter font-light text-center text-4xl text-zinc-400">
-                Veja seus <div className="text-green-600 font-bold ml-2">extratos</div>
+                Veja seus <span className="text-green-600 font-bold ml-2">extratos</span>
             </div>
         </div>
         <Table data={data} />
