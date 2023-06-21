@@ -49,23 +49,23 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, user }) => {
                     leaveTo="opacity-0 translate-x-full -translate-y-full"
                 >
                     <div className="flex items-center justify-center h-screen">
-                        <div className="w-96 h-2/3 bg-green-600 mt-16 rounded-xl flex items-center z-20">
+                        <div className="w-full h-10/12 bg-green-600 mt-16 rounded-xl flex items-center z-20">
                             <div className="flex flex-col">
-                                <div className="absolute ml-24 -mt-32">
-                                    <div className="h-48 w-48 bg-white rounded-full overflow-hidden mx-auto">
+                                <div className="absolute ml-28 -mt-24">
+                                    <div className="h-44 w-44 bg-white rounded-full">
                                         <div className="h-full w-full flex items-center justify-center">
-                                            <img src={user.avatar} alt="avatar" className="h-44 w-44 object-cover rounded-full" />
+                                            <img src={user.avatar} alt="avatar" className="h-40 w-40 object-cover rounded-full max-w-full" />
                                         </div>
                                     </div>
                                 </div>
                                 <div className="mt-16">
                                     {modalOptions.map((item, index) => (
-                                        <div className="flex items-center my-10" key={index}>
+                                        <div className="flex items-center my-8" key={index}>
                                             <div className="ml-16 mr-4">
                                                 <img src={item.icon} alt="icon" width={item.w} height={item.w}/>
                                             </div>
                                             <div className="ml-4 mr-16 text-white font-inter tracking-wide">
-                                                <h2 className="mb-2">{item.title}</h2>
+                                                <h2 className="mb-1">{item.title}</h2>
                                                 <p className="text-xs font-extralight">{item.subtitle}</p>
                                             </div>
                                         </div>

@@ -13,7 +13,8 @@ const defaultState = {
   user: {
     points: 0,
   },
-  setUser: (user: User) => {
+  // setUser: (user: User) => {
+  setUser: () => {
     
   }
 } as UserContextInterface

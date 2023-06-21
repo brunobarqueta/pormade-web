@@ -15,10 +15,10 @@ const Collapse: React.FC<CollapseProps> = ({ title, subtitle, text }) => {
 	};
 
 	return (
-		<div className="w-screen flex items-center justify-center font-inter cursor-pointer my-4" onClick={handleCollapse}>
-			<div className="w-5/6 bg-white rounded-lg green-box-shadow shadow-opacity p-4">
+		<div className="w-screen flex items-center justify-center font-inter cursor-pointer my-6" onClick={handleCollapse}>
+			<div className="w-5/6 bg-white rounded-lg green-box-shadow shadow-opacity p-6">
 				{isCollapsed && (
-					<div className="flex justify-between mb-4">
+					<div className="flex justify-between items-center">
 						<h2 className="text-zinc-400 text-2xl font-light tracking-wide">{title}</h2>
 						<button>
 							<FiPlus size={32} className="text-green-600 text-xl" />

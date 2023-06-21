@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent } from "react";
 import store_map from "../assets/store-map.png";
 import { AiOutlineSearch } from "react-icons/ai";
 
