@@ -28,7 +28,7 @@ const Table: React.FC<Props> = ({ data }) => {
 	};
 
 	return (
-		<div className="w-4/5 mx-auto">
+		<div className="w-4/5 mx-auto md:mt-56">
 			<table className="min-w-full font-inter text-sm">
 				<thead>
 					<tr>

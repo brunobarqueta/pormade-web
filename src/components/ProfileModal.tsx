@@ -49,7 +49,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, user }) => {
                     leaveTo="opacity-0 translate-x-full -translate-y-full"
                 >
                     <div className="flex items-center justify-center h-screen">
-                        <div className="w-full h-10/12 bg-green-600 mt-16 rounded-xl flex items-center z-20">
+                        <div className="w-full h-10/12 bg-green-600 mt-16 rounded-xl flex items-center">
                             <div className="flex flex-col">
                                 <div className="absolute ml-28 -mt-24">
                                     <div className="h-44 w-44 bg-white rounded-full">

@@ -34,7 +34,7 @@ const Stores = () => {
   return (
     <>
       <NavBar />
-      <div className="justify-center font-inter mx-auto max-w-screen-xl">
+      <div className="justify-center font-inter mx-auto max-w-screen-xl md:mt-48">
         <div className="flex flex-col items-center justify-center mb-12">
           <div className="flex absolute top-36 font-light text-center text-4xl text-zinc-400">
             Conheça nossas <span className="text-green-600 font-bold ml-2">lojas</span>

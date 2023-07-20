@@ -7,15 +7,25 @@ import logo from "../assets/logo.png";
 import profile_img from "../assets/profile-img.png";
 import bell from "../assets/bell.png";
 import gray_bell from "../assets/gray-bell.png";
+import { AiOutlineMenu } from "react-icons/ai";
 
 import { useState } from "react";
 
 const NavBar = () => {
+	const Links = [
+		{ name: "Início", link: "/" },
+		{ name: "Prêmios", link: "/prizes" },
+		{ name: "Lojas", link: "/stores" },
+		{ name: "Extratos", link: "/extracts" },
+		{ name: "Dúvidas", link: "/faq" },
+	];
+
 	const location = useLocation();
 	const { pathname } = location;
-	const isDark = pathname === "/" || pathname === "/faq";
+	const isDark = pathname === "/";
 
 	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [open, setOpen] = useState(false);
 
 	const handleProfileClick = () => {
 		setIsModalOpen(true);
@@ -26,48 +36,31 @@ const NavBar = () => {
 	};
 
 	return (
-		<div>
-			{pathname === "/" ? <PointsHome /> : null}
-			<nav className={`h-48 flex justify-between px-12 ${isDark ? "bg-green-600" : "bg-white"}`}>
-				<Link to="/" className="flex">
-					<img src={isDark ? logo_white : logo} alt="Logo" className="w-44 object-contain mb-16" />
-				</Link>
-				<div className="flex-1 flex justify-end items-center mr-8 mb-16 tracking-wider font-inter">
-					<ul className={`flex text-xs uppercase font-normal ${isDark ? "text-white" : "text-gray-400"}`}>
-						{/* <li className="mr-6">
-							<Link to="/login">Ver Login</Link>
-						</li> */}
-						<li className={`mr-6 ${pathname === "/" && "text-green-300 font-bold"}`}>
-							<Link to="/">Início</Link>
-						</li>
-						<li className={`mr-6 ${pathname === "/prizes" && "text-green-600 font-bold"}`}>
-							<Link to="/prizes">Prêmios</Link>
-						</li>
-						<li className={`mr-6 ${pathname === "/stores" && "text-green-600 font-bold"}`}>
-							<Link to="/stores">Lojas</Link>
-						</li>
-						<li className={`mr-6 ${pathname === "/extracts" && "text-green-600 font-bold"}`}>
-							<Link to="/extracts">Extratos</Link>
-						</li>
-						{/* <li className={`mr-6 ${pathname === "/financial-extract" && "text-green-600 font-bold"}`}>
-                            <Link to="/financial-extract">Extratos Financeiros</Link>
-                        </li> */}
-						<li className={`mr-6 ${pathname === "/faq" && "text-green-300 font-bold"}`}>
-							<Link to="/faq">Dúvidas</Link>
-						</li>
-						<li className="mr-6 cursor-pointer" onClick={handleProfileClick}>
-							Perfil
-						</li>
-					</ul>
-					<div>
-						<img src={profile_img} alt="Foto de Perfil" className="h-16 w-16 rounded-full mx-4 cursor-pointer" onClick={handleProfileClick} />
-					</div>
-					<div>
-						<img src={isDark ? bell : gray_bell} alt="Sino" className="w-6 h-6 ml-4 object-scale-down" />
-						<div className={`absolute rounded-full w-3 h-3 -mt-7 ml-7 ${isDark ? "bg-green-400" : "bg-green-700"}`}></div>
-					</div>
+		<div className="w-full fixed top-0 left-0 z-10">
+			<div className={`md:flex ${pathname === "/" ? "h-44 md:h-48" : "h-24 md:h-32"} items-center justify-between px-4 md:px-10 py-4 tracking-wider font-inter ${isDark ? "bg-green-600" : "bg-white"}`}>
+				<div className="font-bold text-2xl md:mb-8 cursor-pointer flex items-center font-inter text-gray-800">
+					<Link to="/">
+						<img src={isDark ? logo_white : logo} alt="Logo" className="w-44 object-contain" />
+					</Link>
 				</div>
-			</nav>
+
+				<div onClick={() => setOpen(!open)} className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden">
+					<AiOutlineMenu className={`${pathname === "/" ? "text-white" : "text-green-600"} md:hidden`} size={32} />
+				</div>
+
+				<ul
+					className={`md:flex md:items-center md:pb-0 text-xs uppercase font-normal ${
+						isDark ? "text-white bg-green-600" : "text-gray-400 bg-white"
+					} absolute md:static md:z-auto z-40 left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? "top-20 " : "top-[-490px]"}`}
+				>
+					{Links.map((link) => (
+						<li key={link.name} className={`mr-6 ${pathname === link.link && "text-green-300 font-bold"} text-lg md:text-xs md:my-0 my-7`}>
+							<Link to={link.link}>{link.name}</Link>
+						</li>
+					))}
+				</ul>
+			</div>
+            {pathname === "/" ? <PointsHome /> : null}
 			<ProfileModal isOpen={isModalOpen} onClose={closeModal} user={{ name: "aaa", subtitle: "bbb", avatar: profile_img }} />
 		</div>
 	);
