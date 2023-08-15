@@ -29,7 +29,7 @@ const Prize = () => {
 		<>
 			<NavBar />
 			{prize != undefined ? (
-				<div className="flex justify-center h-screen font-inter">
+				<div className="flex justify-center h-screen font-inter mt-32">
 					<div>
 						<div className="relative">
 							<img src={vector_big} className="absolute bottom-0 object-contain rounded-3xl" alt="vector" />

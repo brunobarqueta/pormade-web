@@ -9,7 +9,7 @@ import bell from "../assets/bell.png";
 import gray_bell from "../assets/gray-bell.png";
 import { AiOutlineMenu } from "react-icons/ai";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const NavBar = () => {
 	const Links = [
@@ -35,9 +35,25 @@ const NavBar = () => {
 		setIsModalOpen(false);
 	};
 
+	const [scrollingDown, setScrollingDown] = useState(false);
+
+	const handleScroll = () => {
+		setScrollingDown(window.scrollY > 0);
+	};
+
+	useEffect(() => {
+		window.addEventListener("scroll", handleScroll);
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
+
 	return (
-		<div className="w-full fixed top-0 left-0 z-10">
-			<div className={`md:flex ${pathname === "/" ? "h-44 md:h-48" : "h-24 md:h-32"} items-center justify-between px-4 md:px-10 py-4 tracking-wider font-inter ${isDark ? "bg-green-600" : "bg-white"}`}>
+		<div className={`w-full fixed top-0 left-0 z-10 ${scrollingDown ? "fade-out" : "fade-in"}`}>
+			{/* && window.innerWidth < 768 */}
+			<div
+				className={`md:flex ${pathname === "/" ? "h-44 md:h-48" : "h-24 md:h-32"} items-center justify-between px-4 md:px-10 py-4 tracking-wider font-inter ${isDark ? "bg-green-600" : "bg-white"}`}
+			>
 				<div className="font-bold text-2xl md:mb-8 cursor-pointer flex items-center font-inter text-gray-800">
 					<Link to="/">
 						<img src={isDark ? logo_white : logo} alt="Logo" className="w-44 object-contain" />
@@ -58,9 +74,16 @@ const NavBar = () => {
 							<Link to={link.link}>{link.name}</Link>
 						</li>
 					))}
+					<div>
+						<img src={profile_img} alt="Foto de Perfil" className="h-16 w-16 rounded-full mx-4 cursor-pointer" onClick={handleProfileClick} />
+					</div>
+					<div>
+						<img src={isDark ? bell : gray_bell} alt="Sino" className="w-6 h-6 ml-4 object-scale-down" />
+						<div className={`absolute rounded-full w-3 h-3 -mt-7 ml-7 ${isDark ? "bg-green-400" : "bg-green-700"}`}></div>
+					</div>
 				</ul>
 			</div>
-            {pathname === "/" ? <PointsHome /> : null}
+			{pathname === "/" ? <PointsHome /> : null}
 			<ProfileModal isOpen={isModalOpen} onClose={closeModal} user={{ name: "aaa", subtitle: "bbb", avatar: profile_img }} />
 		</div>
 	);
