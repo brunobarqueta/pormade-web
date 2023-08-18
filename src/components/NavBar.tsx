@@ -49,8 +49,7 @@ const NavBar = () => {
 	}, []);
 
 	return (
-		<div className={`w-full fixed top-0 left-0 z-10 ${scrollingDown ? "fade-out" : "fade-in"}`}>
-			{/* && window.innerWidth < 768 */}
+		<div className={`w-full fixed top-0 left-0 z-10 ${scrollingDown && window.innerWidth < 768 ? "fade-out" : "fade-in"}`}>
 			<div
 				className={`md:flex ${pathname === "/" ? "h-44 md:h-48" : "h-24 md:h-32"} items-center justify-between px-4 md:px-10 py-4 tracking-wider font-inter ${isDark ? "bg-green-600" : "bg-white"}`}
 			>
@@ -78,7 +77,7 @@ const NavBar = () => {
 						<img src={profile_img} alt="Foto de Perfil" className="h-16 w-16 rounded-full mx-4 cursor-pointer" onClick={handleProfileClick} />
 					</div>
 					<div>
-						<img src={isDark ? bell : gray_bell} alt="Sino" className="w-6 h-6 ml-4 object-scale-down" />
+						<img src={isDark ? bell : gray_bell} alt="Sino" className="w-6 h-6 md:ml-4 object-scale-down" />
 						<div className={`absolute rounded-full w-3 h-3 -mt-7 ml-7 ${isDark ? "bg-green-400" : "bg-green-700"}`}></div>
 					</div>
 				</ul>
