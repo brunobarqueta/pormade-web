@@ -1,22 +1,9 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import Points from "../Points";
 import { UserContext } from "../../contexts/userContext";
 
 const PointsHome = () => {
     const {user} = useContext(UserContext);
-
-    const [scrollingDown, setScrollingDown] = useState(false);
-
-	const handleScroll = () => {
-		setScrollingDown(window.scrollY > 0);
-	};
-
-    useEffect(() => {
-		window.addEventListener("scroll", handleScroll);
-		return () => {
-			window.removeEventListener("scroll", handleScroll);
-		};
-	}, []);
 
     return (
         <div className={`flex-grow flex flex-col items-center justify-center font-inter`}>
