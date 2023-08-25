@@ -27,7 +27,7 @@ type UserProviderProps = {
 
 export default function UserProvider({children}: UserProviderProps) {
   const [user, setUser] = useState<User>({
-    points: 54000
+    points: 154000
   })
 
   return (
