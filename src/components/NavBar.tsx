@@ -29,16 +29,21 @@ const NavBar = () => {
 
 	const handleProfileClick = () => {
 		setIsModalOpen(true);
+		document.body.classList.add("modal-open");
 	};
 
 	const closeModal = () => {
 		setIsModalOpen(false);
+		document.body.classList.remove("modal-open");
 	};
 
 	const [scrollingDown, setScrollingDown] = useState(false);
 
 	const handleScroll = () => {
 		setScrollingDown(window.scrollY > 0);
+		setTimeout(() => {
+			setOpen(false)
+		}, 500);
 	};
 
 	useEffect(() => {
